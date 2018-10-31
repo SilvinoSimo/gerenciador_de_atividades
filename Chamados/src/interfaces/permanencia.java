@@ -3,21 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package logica;
+package interfaces;
 
 /**
  *
  * @author silvino
  */
-public class cadastrarTarefa {
-    public cadastrarTarefa(){
-    }
+public class permanencia {
     
-    public void cadatrar(String nome, String solicitante,int prioridade){
+    
+    public String back_up (String arquivo){
+        String retorno;
+        retorno = arquivo;
         
         
-        
+        return retorno;
         
     }
-    
+    public void retornar(){
+
+}
 }
