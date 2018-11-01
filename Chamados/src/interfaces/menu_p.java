@@ -5,6 +5,7 @@
  */
 package interfaces;
 
+import java.util.regex.Pattern;
 import javax.swing.JTextArea;
 
 /**
@@ -19,10 +20,12 @@ public class menu_p extends javax.swing.JFrame {
     public menu_p() {
         initComponents();
     }
-    String Mostruario;
-    permanencia Permanencia = new permanencia();
-     conecxao conn = new conecxao();
-     
+
+    menu_p(Object object, boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+ 
+
     
 
     /**
@@ -36,6 +39,15 @@ public class menu_p extends javax.swing.JFrame {
 
         jMenuItem3 = new javax.swing.JMenuItem();
         jSeparator3 = new javax.swing.JSeparator();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu4 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
+        jMenu6 = new javax.swing.JMenu();
+        jMenuBar3 = new javax.swing.JMenuBar();
+        jMenu7 = new javax.swing.JMenu();
+        jMenu8 = new javax.swing.JMenu();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenu9 = new javax.swing.JMenu();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
@@ -44,15 +56,35 @@ public class menu_p extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
-        jMenu3 = new javax.swing.JMenu();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
 
         jMenuItem3.setText("jMenuItem3");
 
+        jMenu4.setText("File");
+        jMenuBar2.add(jMenu4);
+
+        jMenu5.setText("Edit");
+        jMenuBar2.add(jMenu5);
+
+        jMenu6.setText("jMenu6");
+
+        jMenu7.setText("File");
+        jMenuBar3.add(jMenu7);
+
+        jMenu8.setText("Edit");
+        jMenuBar3.add(jMenu8);
+
+        jMenuItem4.setText("jMenuItem4");
+
+        jMenu9.setText("jMenu9");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(0, 51, 255));
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -98,12 +130,22 @@ public class menu_p extends javax.swing.JFrame {
 
         jMenu1.setText("Cadastrar ");
 
-        jMenuItem1.setText("cadastrar chamado ");
+        jMenuItem1.setText("Cadastrar chamado ");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem1);
-        jMenu1.add(jSeparator2);
 
-        jMenu3.setText("Sair");
-        jMenu1.add(jMenu3);
+        jMenuItem5.setText("Sair");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem5);
+        jMenu1.add(jSeparator2);
         jMenu1.add(jSeparator1);
 
         jMenuBar1.add(jMenu1);
@@ -111,6 +153,11 @@ public class menu_p extends javax.swing.JFrame {
         jMenu2.setText("Relatórios");
 
         jMenuItem2.setText("relatório completo");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem2);
 
         jMenuBar1.add(jMenu2);
@@ -132,9 +179,33 @@ public class menu_p extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String[] args = null;
-       jTextArea1.setText(Permanencia.back_up(conn.retorno()));
+    mostrar most = new mostrar();
+   String resultado; 
+  int cont = 0;
+   
+   resultado = most.mostrar_lista();
+   
+
+   jTextArea1.setText(resultado);
+
+ 
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+       cadastrar_i cada = new cadastrar_i();
+       cada.setVisible(true);
+          this.dispose();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+     relatório_i rel = new relatório_i();
+     rel.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+       System.exit(0);
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -176,11 +247,20 @@ public class menu_p extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuBar jMenuBar3;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPopupMenu.Separator jSeparator1;

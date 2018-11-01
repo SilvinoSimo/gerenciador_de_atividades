@@ -6,38 +6,65 @@
 package interfaces;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import javax.swing.JOptionPane;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 
 /**
  *
- * @author silvino
+ * @author Silvino
  */
 public class conecxao {
-    public String retorno(){
-        String linha = new String();
-        String conteudo = null;
-        permanencia Permanencia = new permanencia();
-        
-        File arquivo = new File("/home/silvino/desktop/teste_git/software_gerenciamento_atividades/Chamados/banco.txt");
-        try{
-            FileReader leitor = new FileReader(arquivo);
-            BufferedReader buferedarquivo = new BufferedReader(leitor);   
-            
-            while(true){
-                linha = buferedarquivo.readLine();
-                if(linha == null ){
-                    break;
-                }
-                
-            }
-            
-         conteudo =   Permanencia.back_up(linha);
-        }catch(Exception e){
-             JOptionPane.showMessageDialog(null, "erro ao ler o arquivo");
-        }
-        return conteudo + "oi" ;
-    }
     
+ 
+   public String cadas(String cont){
+ String conteudo = cont;
+    try{ 
+        
+     FileOutputStream arquivo = new FileOutputStream("arquivo.txt");       
+            PrintWriter ar = new PrintWriter(arquivo);
+            
+           
+         ar.println(conteudo);
+         
+            ar.close();
+            arquivo.close();
+            
+             System.out.println("arquivo gravado com sucesso");
+            
+        }catch(Exception ex){
+           System.out.println("Erro ao escrever arquivo"+ ex);
+        }
+       return cont;
+   }
+   
+   
+   
+   
+   public String ler (){
+       String resposta = null;
+        try{ 
+    
+            FileInputStream arquivo = new FileInputStream("arquivo.txt");
+           InputStreamReader imput = new InputStreamReader(arquivo);
+            BufferedReader br = new BufferedReader(imput);
+         String conteudo = null;
+          String linha; 
+          do{
+              linha = br.readLine();
+              if (linha != null){
+                 conteudo = linha; 
+                 resposta = conteudo;
+              }
+          }while(linha != null);
+            
+            
+            
+        }catch(Exception ex){
+           System.out.println("Erro ao ler arquivo"+ ex);
+        }
+      
+       return resposta; 
+   }
 }
