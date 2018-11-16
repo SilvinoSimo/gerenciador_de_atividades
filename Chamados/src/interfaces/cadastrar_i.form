@@ -64,7 +64,7 @@
                               <Component id="jButton2" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="jScrollPane1" pref="253" max="32767" attributes="0"/>
+                          <Component id="jScrollPane1" pref="296" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -103,7 +103,7 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Nome solicitante"/>
+            <Property name="text" type="java.lang.String" value="Solicitado por:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField1">
@@ -113,14 +113,14 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="analista"/>
+            <Property name="text" type="java.lang.String" value="Feito por:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField2">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
-            <Property name="text" type="java.lang.String" value="descri&#xe7;&#xe3;o do Atendimento"/>
+            <Property name="text" type="java.lang.String" value="Oque foi feito:"/>
           </Properties>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">

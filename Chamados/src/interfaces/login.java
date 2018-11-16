@@ -23,6 +23,7 @@ public class login extends javax.swing.JFrame {
     
     public login() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -83,7 +84,7 @@ public class login extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(74, 74, 74)
                         .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -123,22 +124,27 @@ public class login extends javax.swing.JFrame {
         login = jTextField1.getText();
         Senha = jPasswordField1.getText();
         menu_p menu = new menu_p();
-        
-        if (login.equals("1")&& Senha.equals("1")){
+        validar_usuario validar = new validar_usuario();
+        int retorno;
+        retorno = validar.Validar(login, Senha);
+        if (retorno == 1){
             menu.setVisible(true);
             this.dispose();
             }else{ 
              JOptionPane.showMessageDialog(null,"login ou senha errados. Tentativas restantes "+ tentativas);
              tentativas = tentativas - 1;
              if(tentativas == 0 ){
-                  JOptionPane.showMessageDialog(null, "Numero de tentativas esgotadas");
+                        
+
                   System.exit(0);
              }
         }
+        
+       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-         JOptionPane.showMessageDialog(null, "Obrigado por testar o sofware");
+         
                   System.exit(0);
     }//GEN-LAST:event_jButton2ActionPerformed
 

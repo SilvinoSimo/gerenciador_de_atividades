@@ -6,6 +6,7 @@
 package interfaces;
 
 import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 
 /**
@@ -19,6 +20,7 @@ public class menu_p extends javax.swing.JFrame {
      */
     public menu_p() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     menu_p(Object object, boolean b) {
@@ -48,6 +50,10 @@ public class menu_p extends javax.swing.JFrame {
         jMenu8 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenu9 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuItem8 = new javax.swing.JMenuItem();
+        jSeparator7 = new javax.swing.JSeparator();
+        jSeparator8 = new javax.swing.JSeparator();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
@@ -61,6 +67,14 @@ public class menu_p extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem10 = new javax.swing.JMenuItem();
+        jMenu10 = new javax.swing.JMenu();
+        jMenuItem7 = new javax.swing.JMenuItem();
+        jSeparator6 = new javax.swing.JPopupMenu.Separator();
+        jMenuItem9 = new javax.swing.JMenuItem();
+        jSeparator5 = new javax.swing.JPopupMenu.Separator();
+        jSeparator4 = new javax.swing.JPopupMenu.Separator();
 
         jMenuItem3.setText("jMenuItem3");
 
@@ -82,6 +96,10 @@ public class menu_p extends javax.swing.JFrame {
 
         jMenu9.setText("jMenu9");
 
+        jMenu3.setText("jMenu3");
+
+        jMenuItem8.setText("jMenuItem8");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 51, 255));
@@ -94,7 +112,7 @@ public class menu_p extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Noto Sans", 1, 18)); // NOI18N
         jLabel1.setText("Chamados em aberto!");
 
-        jButton1.setText("ver");
+        jButton1.setText("Ver");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -113,13 +131,13 @@ public class menu_p extends javax.swing.JFrame {
                 .addGap(40, 40, 40)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addContainerGap(112, Short.MAX_VALUE))
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(65, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(19, Short.MAX_VALUE)
+                .addContainerGap(21, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jButton1))
@@ -152,13 +170,52 @@ public class menu_p extends javax.swing.JFrame {
 
         jMenu2.setText("Relatórios");
 
-        jMenuItem2.setText("relatório completo");
+        jMenuItem2.setText("Relatório");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem2ActionPerformed(evt);
             }
         });
         jMenu2.add(jMenuItem2);
+
+        jMenuItem6.setText("Relatório completo");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem6);
+
+        jMenuItem10.setText("Relatório pessoal ");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem10);
+
+        jMenu10.setText("Excluir Registros");
+
+        jMenuItem7.setText("registro temporario");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
+        jMenu10.add(jMenuItem7);
+        jMenu10.add(jSeparator6);
+
+        jMenuItem9.setText("Registro pessoal");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
+        jMenu10.add(jMenuItem9);
+        jMenu10.add(jSeparator5);
+        jMenu10.add(jSeparator4);
+
+        jMenu2.add(jMenu10);
 
         jMenuBar1.add(jMenu2);
 
@@ -204,8 +261,36 @@ public class menu_p extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-       System.exit(0);
+
+        JOptionPane.showMessageDialog(null, "Obrigado por testar o sofware");
+        System.exit(0);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+       relatorio_full relafull = new relatorio_full();
+       relafull.setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+      cadastrar cadas = new cadastrar();
+      String retorno;
+       retorno = cadas.apagarB1();
+        JOptionPane.showMessageDialog(null, "O valor do banco_1 agora é " + retorno);
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+       relatorio_pessoal rela = new relatorio_pessoal();
+       rela.setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+         cadastrar cadas = new cadastrar();
+      String retorno;
+       retorno = cadas.apagarB3();
+        JOptionPane.showMessageDialog(null, "O valor do banco_1 agora é " + retorno);
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -246,7 +331,9 @@ public class menu_p extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
@@ -257,15 +344,25 @@ public class menu_p extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuBar jMenuBar3;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JPopupMenu.Separator jSeparator4;
+    private javax.swing.JPopupMenu.Separator jSeparator5;
+    private javax.swing.JPopupMenu.Separator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JSeparator jSeparator8;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }

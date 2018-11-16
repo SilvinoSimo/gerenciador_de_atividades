@@ -33,8 +33,28 @@ lista = retorno.replace(";", "\n");
     
       }    
   
-
+    public String mostrar_lista_full(){
+           conecxao conn = new conecxao();
+           String lista;
+         String retorno; 
+        
+         retorno = conn.ler2();
+lista = retorno.replace(";", "\n");
+    return lista; 
+    
+    
+      }    
    
-      
+      public String mostrar_lista_Pessoal(){
+           conecxao conn = new conecxao();
+           String lista;
+         String retorno; 
+        
+         retorno = conn.ler3();
+lista = retorno.replace(";", "\n");
+    return lista; 
+    
+    
+      }    
     
 }

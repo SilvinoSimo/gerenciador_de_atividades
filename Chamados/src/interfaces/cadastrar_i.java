@@ -10,6 +10,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -22,6 +23,7 @@ public class cadastrar_i extends javax.swing.JFrame {
      */
     public cadastrar_i() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -48,7 +50,7 @@ public class cadastrar_i extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 51, 255));
 
-        jLabel1.setText("Nome solicitante");
+        jLabel1.setText("Solicitado por:");
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -56,9 +58,9 @@ public class cadastrar_i extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("analista");
+        jLabel2.setText("Feito por:");
 
-        jLabel3.setText("descrição do Atendimento");
+        jLabel3.setText("Oque foi feito:");
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -99,7 +101,7 @@ public class cadastrar_i extends javax.swing.JFrame {
                             .addComponent(jButton1)
                             .addComponent(jButton2))
                         .addGap(26, 26, 26)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -149,12 +151,22 @@ public class cadastrar_i extends javax.swing.JFrame {
        String descricao = jTextArea1.getText();
        String conteudo = null ; 
        cadastrar cada = new cadastrar();
+       
+       Atendente = "realizado por " + Atendente;
+       solicitante = "a pedido de: "+solicitante;
+       descricao = "Atendimento realizado: "+ descricao;
    
        cada.cadastrar(Atendente, solicitante, descricao);
        
+        JOptionPane.showMessageDialog(null,"Chamado cadastrado");
+        
+        
        Atendente = null;
        solicitante = null;
        descricao = null;
+       jTextArea1.setText(null);
+       jTextField1.setText(null);
+       jTextField2.setText(null);
        
     }//GEN-LAST:event_jButton1ActionPerformed
 

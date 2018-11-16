@@ -24,4 +24,19 @@ public class relatorio_c {
 return retorno;
     }
     
+     public String Relatorio_full(){
+        String retorno ; 
+        String lista;
+        mostrar most = new mostrar();
+       lista = most.mostrar_lista_full();
+        
+       retorno = lista;
+
+
+
+return retorno;
+    }
+    
+    
+    
 }
