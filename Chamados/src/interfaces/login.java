@@ -124,13 +124,17 @@ public class login extends javax.swing.JFrame {
         login = jTextField1.getText();
         Senha = jPasswordField1.getText();
         menu_p menu = new menu_p();
+        menu_p2 menu2 = new menu_p2();
         validar_usuario validar = new validar_usuario();
         int retorno;
         retorno = validar.Validar(login, Senha);
-        if (retorno == 1){
+        if (retorno == 2){
             menu.setVisible(true);
             this.dispose();
-            }else{ 
+        }else if(retorno ==1){
+            menu2.setVisible(true);
+            this.dispose();
+        }else{ 
              JOptionPane.showMessageDialog(null,"login ou senha errados. Tentativas restantes "+ tentativas);
              tentativas = tentativas - 1;
              if(tentativas == 0 ){

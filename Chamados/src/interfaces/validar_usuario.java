@@ -18,8 +18,14 @@ public class validar_usuario {
       if (login.equals("1")&& Senha.equals("1")){
           retorno = 1;
             
-        }else if (login.equals("Silvino")&& Senha.equals("Silvino88S04J")){
+        }else if (login.equals("")&& Senha.equals("")){
           retorno = 1;
+        
+        }else if (login.equals("023082")&& Senha.equals("88S04J")){
+          retorno = 2;
+        
+        } else if (login.equals("121316")&& Senha.equals("161312")){
+          retorno = 2;
         
         }else{
                 retorno = 0;
